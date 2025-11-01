@@ -113,7 +113,8 @@ export class CommandHandlers {
 • All links expire after 1 hour
 • Each link can only be used once
 • Bot is restricted to authorized users only
-• Rate limited to 3 requests per minute
+• Rate limited to 10 requests per 30 seconds
+• Bot only responds in private chat (not in groups)
 
 Need assistance? Contact the administrator.`;
 

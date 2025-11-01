@@ -4,6 +4,7 @@ import { existsSync } from 'fs';
 
 function loadEnvironment(): void {
   const envCandidates = [
+    path.resolve(process.cwd(), '.env.local'), // Prioridade para dev local
     path.resolve(process.cwd(), '.env'),
     path.resolve(process.cwd(), '..', '.env'),
   ];

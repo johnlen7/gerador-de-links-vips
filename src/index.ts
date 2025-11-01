@@ -32,15 +32,15 @@ async function main(): Promise<void> {
     // Apply rate limiting BEFORE auth middleware
     bot.use(
       limit({
-        timeFrame: 60000, // 1 minute
-        limit: 3, // Max 3 commands per minute
+        timeFrame: 30000, // 30 seconds
+        limit: 10, // Max 10 commands per 30 seconds
         onLimitExceeded: async (ctx) => {
           Logger.warn('Rate limit exceeded', {
             userId: ctx.from?.id,
             username: ctx.from?.username,
           });
           await ctx.reply(
-            '⏳ **Rate Limit Exceeded**\n\nYou can only use commands 3 times per minute. Please wait before trying again.',
+            '⏳ **Rate Limit Exceeded**\n\nYou can only use commands 10 times per 30 seconds. Please wait before trying again.',
             { parse_mode: 'Markdown' }
           );
         },
@@ -83,7 +83,8 @@ async function main(): Promise<void> {
         Logger.success(`✅ Bot @${info.username} is running!`, { botId: info.id });
         Logger.info(`📊 Monitoring ${config.vipGroupIds.length} VIP groups`);
         Logger.info(`👥 ${config.authorizedUserIds.length} authorized users`);
-        Logger.info(`🔒 Rate limiting: 3 requests per minute`);
+        Logger.info(`🔒 Rate limiting: 10 requests per 30 seconds`);
+        Logger.info(`🚫 Group messages: blocked (private chat only)`);
         Logger.info(`🏥 Health check available at http://localhost:${healthPort}/health`);
       },
     });

@@ -1,0 +1,43 @@
+import { Restaurant } from '@/lib/types';
+
+export const restaurants: Restaurant[] = [
+  {
+    id: 'r1',
+    name: 'Batata da Hora',
+    description: 'Especialistas em batatas fritas e assadas. Tradição e qualidade há 15 anos.',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800',
+    rating: 4.8,
+    reviewCount: 1234,
+    deliveryTime: 30,
+    deliveryFee: 5.90,
+    minimumOrder: 20.00,
+    categories: ['frita', 'assada', 'rosti', 'pure'],
+    isOpen: true,
+  },
+  {
+    id: 'r2',
+    name: 'Potato House',
+    description: 'As melhores batatas da cidade! Variedade e sabor incomparáveis.',
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800',
+    rating: 4.9,
+    reviewCount: 2156,
+    deliveryTime: 25,
+    deliveryFee: 4.90,
+    minimumOrder: 25.00,
+    categories: ['frita', 'assada', 'doce', 'gratinada', 'croquete'],
+    isOpen: true,
+  },
+  {
+    id: 'r3',
+    name: 'Batata Premium',
+    description: 'Batatas gourmet preparadas com ingredientes selecionados.',
+    image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800',
+    rating: 5.0,
+    reviewCount: 987,
+    deliveryTime: 35,
+    deliveryFee: 7.90,
+    minimumOrder: 30.00,
+    categories: ['doce', 'hasselback', 'gratinada', 'croquete'],
+    isOpen: true,
+  },
+];
